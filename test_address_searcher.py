@@ -1,21 +1,7 @@
 import unittest
-import requests
 
+from address_searcher import AddressSearcher
 
-class AddressSearcher:
-
-    def search(self, postal_code):
-        url = f"http://zipcloud.ibsnet.co.jp/api/search?zipcode={postal_code}"
-
-        response = requests.get(url)
-        response_dict = response.json()
-
-        prefacture = response_dict["results"][0]["address1"]
-        city = response_dict["results"][0]["address2"]
-        town = response_dict["results"][0]["address3"]
-
-        return f"{prefacture}{city}{town}"
-    
 
 class TestAddressSearcher(unittest.TestCase):
     def test_岩手県八幡平市大更の地名を郵便番号から取得できる(self):
