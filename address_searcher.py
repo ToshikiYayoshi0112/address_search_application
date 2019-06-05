@@ -12,6 +12,9 @@ class AddressSearcher:
 
         response_dict = response.json()
 
+        if response_dict["results"] is None:
+            return "該当するデータは見つかりませんでした。検索キーワードを変えて再検索してください。"
+
         prefacture = response_dict["results"][0]["address1"]
 
         city = response_dict["results"][0]["address2"]

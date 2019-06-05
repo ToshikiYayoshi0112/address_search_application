@@ -23,9 +23,10 @@ class TestAddressSearcher(unittest.TestCase):
 
         actual = address_searcher.search(postal_code="1234567")
 
-        expected = "該当するデータは見つかりませんでいした。検索キーワードを変えて再検索してください。"
+        expected = "該当するデータは見つかりませんでした。検索キーワードを変えて再検索してください。"
 
         self.assertEqual(expected, actual)
+
 
 if __name__ == "__main__":
     unittest.main()
